@@ -12,12 +12,12 @@
   },
   "contributors": [
     {
-      "name": "santosh898",
-      "email": "santoshkottakota007@gmail.com"
-    },
-    {
       "name": "Brad Adams",
       "email": "hi@breadadams.com"
+    },
+    {
+      "name": "santosh898",
+      "email": "santoshkottakota007@gmail.com"
     }
   ],
   "repository": {
@@ -37,7 +37,7 @@
     "mo-js": "~0.288.2",
     "polished": "~3.4.1",
     "react-transition-group": "^4.0.0",
-    "styled-components": "~4.4.0"
+    "styled-components": "~5.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -87,9 +87,8 @@
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown README.md && standard src stories",
-    "postinstall": "npm run build",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
-    "prerelease": "npm run update:check && npm run contributors",
+    "prerelease": "npm run build && npm run update:check && npm run contributors",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "release": "standard-version -a",
